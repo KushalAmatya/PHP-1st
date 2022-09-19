@@ -26,12 +26,12 @@ $result = $conn->query($sql);
             <button type="submit" class="btn btn-primary mt-2">Add todo</button>
         </div>
     </form>
-    <table class="table table-secondary">
+    <table class="table table-striped table-bordered">
         <thead>
-            <tr class="table table-secondary">
+            <tr class="">
                 <th scope="col">ID:</th>
                 <th scope="col">Todo Item</th>
-                <th>Action</th>
+                <th colspan="2" class="text-center">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,9 @@ $result = $conn->query($sql);
                 <tr>
                     <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['title'] ?></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td><button class="btn btn-danger" ><a style="text-decoration: none;" href="delete.php?id=<?php echo $row["id"];?>">Delete</button></td>
+                    <td><button class="btn btn-success"><a style="text-decoration: none;" href="update.php?" class="text-primary">Update</button></td>
+
                 </tr>
             <?php
             }
